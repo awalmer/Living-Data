@@ -1,0 +1,17 @@
+@import url("observablehq:default.css");
+@import url("observablehq:theme-slate.css");
+
+main, main article, .content {
+  max-width: 100%;
+  padding: 0 1rem; /* optional */
+  margin: 0 auto;
+}
+
+/* Hide checkboxes in Inputs.table */
+.observablehq table input[type="checkbox"] {
+  display: none !important;
+}
+
+#observablehq-header {
+  position: absolute;
+}
