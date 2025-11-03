@@ -9,8 +9,8 @@ export default {
   pages: [
     {name: "Prelude", path: "/prelude",
       pages: [
-        {name: "Theory", path: "/theory"},
-        {name: "Data", path: "/data"}
+        {name: "Data", path: "/data"},
+        {name: "Theory", path: "/theory"}
       ]
     },
     {
