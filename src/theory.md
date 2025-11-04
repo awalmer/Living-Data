@@ -66,9 +66,10 @@ style: custom-style.css
     <div>
         <h3>Randomization & Scattering</h3>
         <ul>
-        <li>Represent "abundance," "richness," or a large quantity with more <em><b><span style="color:#ff725c;">layers of sound</span></b></em>.</li>
-        <li>Capture a reduction of quantity by reducing the number of layers.</li>
-        <li>Layers / richness → simplicity / sparseness</li>
+        <li>Represent a large quantity with <em>many notes</em>.</li>
+        <li>Capture wide-ranging data values widely scattered notes, by pitch and position.</li>
+        <li>Capture a reduction sof range with fewer, more clustered notes.s</li>
+        <li>Sonic diversity → sonic homogeneity</li>
         </ul>
     </div>
     <div class="card card-fit-content svg-artwork"></div>

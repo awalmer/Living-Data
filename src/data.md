@@ -6,9 +6,11 @@ style: custom-style.css
 
 ```js
 const biomass = FileAttachment("data/biomass-mammals-display.csv").csv({typed: true});
+const biomass_data = FileAttachment("data/biomass-mammals.csv").csv({typed: true});
 const trees = FileAttachment("data/deforestation-display.csv").csv({typed: true});
 const whales = FileAttachment("data/whales-display.csv").csv({typed: true});
 ```
+
 ```js
 const treesDisplay = trees.map(d => ({
   Year: String(d.Year ?? d.year ?? d["Year"]), // handles commas
@@ -17,19 +19,67 @@ const treesDisplay = trees.map(d => ({
 }));
 ```
 
+```js
+import * as Plot from "npm:@observablehq/plot";
+
+const biomass_chart = Plot.plot({
+  title: "The long-run decline of the world's wild mammals",
+  caption: "Chart is modeled after published version from Our World in Data.",
+  width: 700, // smaller overall size
+  height: 250,
+  marginTop: 40, // ↑ space above chart
+  marginLeft: 50,
+  marginBottom: 40,
+  x: {
+    label: "Year",    // categorical x-axis
+    tickRotate: 0,
+    tickFormat: String,
+    labelOffset: 30
+  },
+  y: {
+    label: "Biomass (million tons of carbon)",
+    grid: true
+  },
+  style: {
+    fontSize: "14px",      // ← global font size
+    fontFamily: "sans-serif",
+    background: "transparent" // optional: blend better in cards
+  },
+  color: {
+    legend: false
+  },
+  marks: [
+    Plot.barY(biomass_data, {
+      x: "Year",
+      y: "Biomass_mil_carbon",
+      fill: "orange",
+      tip: true, // built-in tooltip
+      sort: {x: "-y"} // sort chronologically
+    }),
+    Plot.ruleY([0])
+  ]
+});
+```
+
 <h2>Biodiversity — <em>Decline of Wild Mammals</em></h2>
 <p><a href="https://ourworldindata.org/biodiversity?insight=wild-mammals-have-declined-by-85-since-the-rise-of-humans#key-insights" target="_blank">Our World in Data</a></p>
 
 
 <div class="grid grid-cols-2">
     <div>
-        <p>Et malesuada fames ac turpis. Integer vitae justo eget magna fermentum iaculis eu non diam. Aliquet risus feugiat in ante metus dictum at. Consectetur purus ut faucibus pulvinar.</p>
+        <p>Wild mammals have declined by 85% since the rise of humans, based on estimates of the total biomass of the world's wild land mammals. Biomass provides a proxy for the richness of the mammal kingdom.</p>
     </div>
     <div class="card card-fit-content" style="padding: 6px;">
         ${Inputs.table(biomass)}
     </div>
 </div>
 
+<div class="card card-fit-content" style="padding: 20px;">
+    ${biomass_chart} 
+</div>
+
+
+<br>
 <br>
 
 <h2>Biodiversity — <em>Deforestation</em></h2>
@@ -138,5 +188,13 @@ You must change your life.
   /* FIX FOR TABLE BEING TALLER THAN NEEDED: */
     .grid {
     align-items: start; /* Prevents equal-height stretching */
+    }
+
+    /* Full width option ~ 85% */
+    main, main article, .content {
+        max-width: 100%;
+        min-width: 70%;
+        padding: 0 1rem; /* optional */
+        margin: 0 auto;
     }
 </style>
