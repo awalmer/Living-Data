@@ -114,6 +114,10 @@ const biomass_chart = Plot.plot({
     </div>
 </div>
 
+<div class="card">
+    <iframe src="https://ourworldindata.org/grapher/whale-populations?tab=chart" loading="lazy" style="width: 100%; height: 500px; border: 0px none;" allow="web-share; clipboard-write"></iframe>
+</div>
+
 <br>
 
 <hr> <!-- horizontal line break -->
