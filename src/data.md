@@ -62,6 +62,31 @@ const biomass_chart = Plot.plot({
 });
 ```
 
+```js
+import * as Plot from "npm:@observablehq/plot";
+
+const deforestation_chart = Plot.plot({
+  width: 700,
+  height: 300,
+  marginLeft: 90, 
+  x: {label: "Year", tickFormat: String},
+  y: {
+    label: "Forest Area (K ha)",
+    // Fit y-axis to the min/max of data
+    domain: [
+      Math.min(...trees.map(d => d["Forest Area (K ha)"])) * 0.995, 
+      Math.max(...trees.map(d => d["Forest Area (K ha)"])) * 1.005
+    ],
+    grid: true
+  },
+  style: {fontFamily: "sans-serif", fontSize: "14px"},
+  marks: [
+    Plot.lineY(trees, {x: "Year", y: "Forest Area (K ha)", stroke: "forestgreen", strokeWidth: 3, curve: "catmull-rom", tip: true}),
+    Plot.dot(trees, {x: "Year", y: "Forest Area (K ha)", fill: "forestgreen"})
+  ]
+});
+```
+
 <h2>Biodiversity — <em>Decline of Wild Mammals</em></h2>
 <p><a href="https://ourworldindata.org/biodiversity?insight=wild-mammals-have-declined-by-85-since-the-rise-of-humans#key-insights" target="_blank">Our World in Data</a></p>
 
@@ -84,21 +109,23 @@ const biomass_chart = Plot.plot({
 <br>
 
 <h2>Biodiversity — <em>Deforestation</em></h2>
-<p><a href="https://www.sciencedirect.com/science/article/pii/S0378112715003400" target="_blank">Global Forest Resource Assessment (2025)</a></p>
+<p><a href="https://openknowledge.fao.org/server/api/core/bitstreams/2dee6e93-1988-4659-aa89-30dd20b43b15/content/cd6709en.html" target="_blank">Global Forest Resource Assessment (2025)</a></p>
 <div class="grid grid-cols-2">
     <div>
-        <p>Findings from Global Forest Resources Assessment 2015 (FRA 2015).
+        <p>Key Findings:
             <ul>
-                <li>Global forest area decreased by 3% from 1990 (4128 M ha) to 2015 (3999 M ha).</li>
-                <li>CHANGE DATA? https://www.carbonbrief.org/un-report-five-charts-showing-how-global-deforestation-is-declining/ </li>
-                <li>The rate of net forest loss was greater in the 1990s</li>
-                <li>Grape</li>
+                <li>The world is losing more forest than it gains every year.</li>
+                <li>However! Rates of deforestation are declining around the world since 1990. 👏 </li>
+                <li>Driving Factors: "Agriculture has historically been the leading cause of forest loss, but wildfire is increasingly posing a threat. Wildfires were the leading driver of tropical forest loss in 2024 for the first time on record." (UN report)</li>
             </ul>
         </p>
     </div>
     <div class="card card-fit-content">
         ${Inputs.table(treesDisplay)}
     </div>
+</div>
+<div class="card card-fit-content" style="padding: 20px;">
+    ${deforestation_chart}
 </div>
 
 <br>

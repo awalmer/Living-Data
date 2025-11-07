@@ -81,10 +81,10 @@ style: custom-style.css
 
 <div class="grid grid-cols-2">
     <div>
-        <h3>Randomization & Scattering</h3>
+        <h3>Amplitude</h3>
         <ul>
-        <li>Represent a large quantity with <em>many notes</em>.</li>
-        <li>Capture wide-ranging data values widely scattered notes, by pitch and position.</li>
+        <li>Represent large quantities or salient characteristics with <em>greater amplitude</em>.</li>
+        <li>Loudness reflects presence and abundance, quietness</li>
         <li>Capture a reduction sof range with fewer, more clustered notes.s</li>
         <li>Sonic diversity → sonic homogeneity</li>
         </ul>
