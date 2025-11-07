@@ -67,6 +67,39 @@ style: custom-style.css
         <h3>Randomization & Scattering</h3>
         <ul>
         <li>Represent a large quantity with <em>many notes</em>.</li>
+        <li>Capture wide-ranging data values by scattering notes across pitch and position.</li>
+        <li>More clustered notes reflect less range.</li>
+        <li>Sonic diversity → sonic homogeneity</li>
+        </ul>
+    </div>
+    <div class="card card-fit-content svg-artwork"></div>
+</div>
+
+
+<!-- Sketch 3 -->
+<br>
+
+<div class="grid grid-cols-2">
+    <div>
+        <h3>Randomization & Scattering</h3>
+        <ul>
+        <li>Represent a large quantity with <em>many notes</em>.</li>
+        <li>Capture wide-ranging data values widely scattered notes, by pitch and position.</li>
+        <li>Capture a reduction sof range with fewer, more clustered notes.s</li>
+        <li>Sonic diversity → sonic homogeneity</li>
+        </ul>
+    </div>
+    <div class="card card-fit-content svg-artwork"></div>
+</div>
+
+<!-- Sketch 4 -->
+<br>
+
+<div class="grid grid-cols-2">
+    <div>
+        <h3>Randomization & Scattering</h3>
+        <ul>
+        <li>Represent a large quantity with <em>many notes</em>.</li>
         <li>Capture wide-ranging data values widely scattered notes, by pitch and position.</li>
         <li>Capture a reduction sof range with fewer, more clustered notes.s</li>
         <li>Sonic diversity → sonic homogeneity</li>

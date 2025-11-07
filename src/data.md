@@ -7,7 +7,8 @@ style: custom-style.css
 ```js
 const biomass = FileAttachment("data/biomass-mammals-display.csv").csv({typed: true});
 const biomass_data = FileAttachment("data/biomass-mammals.csv").csv({typed: true});
-const trees = FileAttachment("data/deforestation-display.csv").csv({typed: true});
+// const trees = FileAttachment("data/deforestation-display.csv").csv({typed: true});
+const trees = FileAttachment("data/global-forest-area-display.csv").csv({typed: true});
 const whales = FileAttachment("data/whales-display.csv").csv({typed: true});
 ```
 
@@ -15,7 +16,7 @@ const whales = FileAttachment("data/whales-display.csv").csv({typed: true});
 const treesDisplay = trees.map(d => ({
   Year: String(d.Year ?? d.year ?? d["Year"]), // handles commas
   "Forest Area (K ha)": d["Forest Area (K ha)"],
-  "Wooded Land (K ha)": d["Wooded Land (K ha)"]
+  // "Wooded Land (K ha)": d["Wooded Land (K ha)"]
 }));
 ```
 
@@ -83,7 +84,7 @@ const biomass_chart = Plot.plot({
 <br>
 
 <h2>Biodiversity — <em>Deforestation</em></h2>
-<p><a href="https://www.sciencedirect.com/science/article/pii/S0378112715003400" target="_blank">"Dynamics of Global Forest Area" (2015)</a></p>
+<p><a href="https://www.sciencedirect.com/science/article/pii/S0378112715003400" target="_blank">Global Forest Resource Assessment (2025)</a></p>
 <div class="grid grid-cols-2">
     <div>
         <p>Findings from Global Forest Resources Assessment 2015 (FRA 2015).
@@ -182,6 +183,7 @@ You must change your life.
   .card th, .card td {
     white-space: nowrap;              /* Prevent line breaks */
     padding-right: 12px;              /* Add a bit of spacing */
+    font-size: 120%;
   }
   .card-fit-content {
     padding: 6px;

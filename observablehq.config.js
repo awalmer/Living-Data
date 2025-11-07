@@ -18,7 +18,7 @@ export default {
       pages: [
         {name: "Biomass", path: "/biomass"},
         {name: "Deforestation", path: "/deforestation"},
-        {name: "Whale Population", path: "/whales"},
+        {name: "Whales", path: "/whales"},
       ]
     },
     {
