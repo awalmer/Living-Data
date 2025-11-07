@@ -4,11 +4,6 @@ header: "Poetry >> Spoken"
 style: custom-style.css
 ---
 
-```js
-import AudioMotionAnalyzer from 'audiomotion-analyzer';
-```
-
-
 <div class="grid grid-cols-2" style="grid-auto-rows: auto;">
   <div class="card">Call me Ishmael.</div>
   <div class="card">Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.</div>
