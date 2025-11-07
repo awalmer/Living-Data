@@ -66,9 +66,12 @@ const biomass_chart = Plot.plot({
 import * as Plot from "npm:@observablehq/plot";
 
 const deforestation_chart = Plot.plot({
+  title: "Reduction in Global Forest Area, 1990-2025",
+  caption: "Data is derived from the Global Forest Resource Assessment (2025).",
   width: 700,
   height: 300,
   marginLeft: 90, 
+  marginBottom: 50,
   x: {label: "Year", tickFormat: String},
   y: {
     label: "Forest Area (K ha)",
@@ -129,13 +132,18 @@ const deforestation_chart = Plot.plot({
 </div>
 
 <br>
+<br>
 
 <h2>Biodiversity — <em>Whale Population Devastation</em></h2>
 <p><a href="https://ourworldindata.org/biodiversity?insight=wild-mammals-have-declined-by-85-since-the-rise-of-humans#key-insights" target="_blank">Our World in Data</a></p>
 
 <div class="grid grid-cols-2">
     <div>
-        <p>Et malesuada fames ac turpis. Integer vitae justo eget magna fermentum iaculis eu non diam. Aliquet risus feugiat in ante metus dictum at. Consectetur purus ut faucibus pulvinar.</p>
+    <ul>
+      <li>The 'modern' whaling era spanned from 1890 onwards.</li>
+      <li>At its peak in the 1960s, we were hunting 80,000 whales every year, and whale populations were become increasingly depleted.</li>
+      <li>1987: The International Whaling Commission (IWC) agreed on a moratorium.</li>
+    </ul>
     </div>
     <div class="card card-fit-content">
         ${Inputs.table(whales)}
