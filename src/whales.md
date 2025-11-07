@@ -1,7 +1,19 @@
 ---
 toc: true
+header: "Biodiversity >> Whale Populations"
 style: custom-style.css
 ---
+
+
+```js
+const whalelogic = FileAttachment("photos/whales-logic.jpg").image({alt: "Logic Session, Whales"})
+```
+
+<h2>Whale Populations</h2>
+<p style="font-size: 110%;">The decline of whale populations (amplitude) over 11 decades (22 seconds).
+
+
+<div class="card card-fit-content">${whalelogic}</div>
 
 <div class="card w-full">
 <iframe src="https://ourworldindata.org/grapher/whale-populations?tab=chart" loading="lazy" style="width: 100%; height: 600px; border: 0px none;" allow="web-share; clipboard-write"></iframe>
