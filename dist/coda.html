@@ -26,7 +26,7 @@ import "./_observablehq/client.98368ff7.js";
 <nav id="observablehq-sidebar">
   <ol>
     <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
-    <li class="observablehq-link observablehq-link-active"><a href="./">Living Data</a></li>
+    <li class="observablehq-link"><a href="./">Living Data</a></li>
   </ol>
   <section>
     <summary class="observablehq-link"><a href="./prelude">Prelude</a></summary>
@@ -50,8 +50,8 @@ import "./_observablehq/client.98368ff7.js";
     <li class="observablehq-link"><a href="./sonified">Sonified</a></li>
     </ol>
   </section>
-  <section>
-    <summary class="observablehq-link"><a href="./coda">Coda</a></summary>
+  <section class="observablehq-section-active">
+    <summary class="observablehq-link observablehq-link-active"><a href="./coda">Coda</a></summary>
     <ol>
     </ol>
   </section>
@@ -59,25 +59,17 @@ import "./_observablehq/client.98368ff7.js";
 <script>{const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
 <div id="observablehq-center">
 <header id="observablehq-header">
-Sonification Concert at Whitman College, 2025
+Coda
 </header>
 <aside id="observablehq-toc" data-selector="h1:not(:first-of-type)[id], h2:first-child[id], :not(h1) + h2[id]">
 <nav>
 </nav>
 </aside>
 <main id="observablehq-main" class="observablehq">
-<h1 id="living-data" tabindex="-1"><a class="observablehq-header-anchor" href="#living-data">Living Data</a></h1>
-<h2><b>Macrocosms and Microcosms</b> — exploring "living data" through expansive global shifts and the minute subtleties of poetry.</h2>
-<br>
-<h3 style="font-weight: normal;"><b>Part I:</b> Biodiversity Orchestra</h3>
-<p><em>(macro)</em></p>
-<p>This sonification considers changes in global biodiversity across a broad timeline, correlating biological diversity to musical diversity. The loss of vibrant life throughout earth's history is reflected in a loss of sonic richness, diminishing in waves.</p>
-<h3 style="font-weight: normal;"><b>Part II:</b> "Natural" Language Poetry</h3>
-<p><em>(micro)</em></p>
-<p>Using unconventional textual analysis, this sonification reconsiders the poem "Invitation" by Mary Oliver. Guided by the nuances of verbal expression, this piece reinterprets Oliver's homage to nature, without words.</p>
-</main>
+<h2>Thank you Whitman College!</h2>
+<p>Enormous thanks to Professor Jordan Wirfs-Brock, and to the Computer Science and Music Departments at Whitman College. </p></main>
 <footer id="observablehq-footer">
-<nav><a rel="next" href="./prelude"><span>Prelude</span></a></nav>
+<nav><a rel="prev" href="./sonified"><span>Sonified</span></a></nav>
 <div>Aura Walmer | <a href="https://aurawalmer.com/data" target="_blank" rel="noopener noreferrer">www.aurawalmer.com</a> | 2025</div>
 </footer>
 </div>

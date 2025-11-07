@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.3">
+<title>Living Data</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_import/custom-style.a619a82c.css">
+<link rel="preload" as="style" href="./_observablehq/stdlib/inputs.ea9fd553.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_import/custom-style.a619a82c.css">
+<link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.ea9fd553.css">
+<link rel="modulepreload" href="./_observablehq/client.98368ff7.js">
+<link rel="modulepreload" href="./_observablehq/runtime.e080113b.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.73a8ec5a.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/inputs.4ef1d259.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/9cffc2bd.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/72f4716c.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/18cbf477.js">
+<link rel="icon" href="./_file/observable.1af93621.png" type="image/png" sizes="32x32">
+<script type="module">
+
+import {define} from "./_observablehq/client.98368ff7.js";
+import {registerFile} from "./_observablehq/stdlib.73a8ec5a.js";
+
+registerFile("./data/global-forest-area-display-mapping.csv", {"name":"./data/global-forest-area-display-mapping.csv","mimeType":"text/csv","path":"./_file/data/global-forest-area-display-mapping.e339b667.csv","lastModified":1762498965349,"size":247});
+registerFile("./photos/deforestation-logic-screenshot-1.jpeg", {"name":"./photos/deforestation-logic-screenshot-1.jpeg","mimeType":"image/jpeg","path":"./_file/photos/deforestation-logic-screenshot-1.a83bdc3f.jpeg","lastModified":1762500364850,"size":848200});
+registerFile("./photos/deforestation-logic-screenshot-2.jpeg", {"name":"./photos/deforestation-logic-screenshot-2.jpeg","mimeType":"image/jpeg","path":"./_file/photos/deforestation-logic-screenshot-2.5c2e760d.jpeg","lastModified":1762500364788,"size":449063});
+
+define({id: "40a70df9", inputs: ["FileAttachment"], outputs: ["trees_mapping"], body: (FileAttachment) => {
+const trees_mapping = FileAttachment("./data/global-forest-area-display-mapping.csv").csv({typed: true});
+return {trees_mapping};
+}});
+
+define({id: "0c17262f", inputs: ["trees_mapping"], outputs: ["treesDisplayMapping"], body: (trees_mapping) => {
+const treesDisplayMapping = trees_mapping.map(d => ({
+  Year: String(d.Year ?? d.year ?? d["Year"]), // handles commas
+  "Forest Area (K ha)": d["Forest Area (K ha)"],
+  "MIDI Notes": d["MIDI Notes"],
+  "Amplitude": d["Amplitude"]
+}));
+return {treesDisplayMapping};
+}});
+
+define({id: "9da503a2", inputs: ["FileAttachment"], outputs: ["tree_photo_1","tree_photo_2"], body: (FileAttachment) => {
+const tree_photo_1 = FileAttachment("./photos/deforestation-logic-screenshot-1.jpeg").image({alt: "Logic Session, Deforestation"})
+// control width with:
+// ...FileAttachment("photos/deforestation-logic-screenshot-1.jpeg").image({width: 900, alt: "Logic Session, Deforestation"})
+const tree_photo_2 = FileAttachment("./photos/deforestation-logic-screenshot-2.jpeg").image({alt: "Logic Session, Deforestation"})
+return {tree_photo_1,tree_photo_2};
+}});
+
+define({id: "97dbde8b", mode: "inline", inputs: ["tree_photo_2","display"], body: async (tree_photo_2,display) => {
+display(await(
+tree_photo_2
+))
+}});
+
+define({id: "a336ac7b", mode: "inline", inputs: ["Inputs","treesDisplayMapping","display"], body: async (Inputs,treesDisplayMapping,display) => {
+display(await(
+Inputs.table(treesDisplayMapping)
+))
+}});
+
+define({id: "e6a31cc4", mode: "inline", inputs: ["tree_photo_1","display"], body: async (tree_photo_1,display) => {
+display(await(
+tree_photo_1
+))
+}});
+
+</script>
+</head>
+<body>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="./">Living Data</a></li>
+  </ol>
+  <section>
+    <summary class="observablehq-link"><a href="./prelude">Prelude</a></summary>
+    <ol>
+    <li class="observablehq-link"><a href="./data">Data</a></li>
+    <li class="observablehq-link"><a href="./theory">Theory</a></li>
+    </ol>
+  </section>
+  <section class="observablehq-section-active">
+    <summary class="observablehq-link"><a href="./biodiv">Part I: Biodiversity</a></summary>
+    <ol>
+    <li class="observablehq-link"><a href="./biomass">Biomass</a></li>
+    <li class="observablehq-link observablehq-link-active"><a href="./deforestation">Deforestation</a></li>
+    <li class="observablehq-link"><a href="./whales">Whales</a></li>
+    </ol>
+  </section>
+  <section>
+    <summary class="observablehq-link"><a href="./poetry">Part II: Poetry</a></summary>
+    <ol>
+    <li class="observablehq-link"><a href="./spoken">Spoken</a></li>
+    <li class="observablehq-link"><a href="./sonified">Sonified</a></li>
+    </ol>
+  </section>
+  <section>
+    <summary class="observablehq-link"><a href="./coda">Coda</a></summary>
+    <ol>
+    </ol>
+  </section>
+</nav>
+<script>{const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<div id="observablehq-center">
+<header id="observablehq-header">
+Biodiversity &gt;&gt; Deforestation
+</header>
+<aside id="observablehq-toc" data-selector="h1:not(:first-of-type)[id], h2:first-child[id], :not(h1) + h2[id]">
+<nav>
+</nav>
+</aside>
+<main id="observablehq-main" class="observablehq">
+<div class="observablehq observablehq--block"><!--:40a70df9:--></div>
+<div class="observablehq observablehq--block"><!--:0c17262f:--></div>
+<div class="observablehq observablehq--block"><!--:9da503a2:--></div>
+<h2>Design Approach</h2>
+<ol style="font-size: 110%;">
+    <li>Use sounds that are akin to "wood" → e.g. wooden mallets, resonant drums, natural materials...</li>
+    <br>
+    <li>As global forest area decreases...</li>
+        <ul>
+            <li>...number of notes decreases</li>
+            <li>...amplitude decreases</li>
+        </ul>
+    <br>
+    <li>Soundscape of tropical rainforest</li>
+</ol>
+<div class="card card-fit-content"><observablehq-loading></observablehq-loading><!--:97dbde8b:--></div>
+<br>
+<br>
+<h2>Mapping</h2>
+<ul style="font-size: 110%;">
+    <li>Number of MIDI Notes: 30 to 5</li>
+    <li>Amplitude: 0 dB to -12 dB</li>
+    <li>Decade Marker: tree falling</li>
+</ul>
+<div class="card card-fit-content">
+    <observablehq-loading></observablehq-loading><!--:a336ac7b:-->
+</div>
+<br>
+<div class="card card-fit-content"><observablehq-loading></observablehq-loading><!--:e6a31cc4:--></div>
+<!-- 
+<div class="grid grid-cols-2 wide-v" style="grid-auto-rows: auto;">
+  <div class="card">${tree_photo_2}</div>
+  <div class="card">It is a way I have of driving off the spleen and regulating the circulation.</div>
+</div>
+-->
+<style>
+  /* Target the Inputs.table inside this card */
+  .card table {
+    width: auto !important;           /* Don’t stretch to container */
+    table-layout: auto !important;    /* Let columns size naturally */
+  }
+  .card th, .card td {
+    white-space: nowrap;              /* Prevent line breaks */
+    padding-right: 12px;              /* Add a bit of spacing */
+    font-size: 130%;
+  }
+  .card-fit-content {
+    padding: 6px;
+    display: inline-block;
+    width: fit-content;
+  }
+  
+  /* FIX FOR TABLE BEING TALLER THAN NEEDED: */
+    .grid {
+    align-items: start; /* Prevents equal-height stretching */
+    }
+
+    /* Full width option ~ 85% */
+    main, main article, .content {
+        max-width: 100%;
+        min-width: 80%;
+        padding: 0 1rem; /* optional */
+        margin: 0 auto;
+    }
+</style></main>
+<footer id="observablehq-footer">
+<nav><a rel="prev" href="./biomass"><span>Biomass</span></a><a rel="next" href="./whales"><span>Whales</span></a></nav>
+<div>Aura Walmer | <a href="https://aurawalmer.com/data" target="_blank" rel="noopener noreferrer">www.aurawalmer.com</a> | 2025</div>
+</footer>
+</div>
+</body>
+</html>

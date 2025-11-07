@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.3">
+<title>Living Data</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_import/custom-style.a619a82c.css">
+<link rel="preload" as="style" href="./_observablehq/stdlib/inputs.ea9fd553.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_import/custom-style.a619a82c.css">
+<link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.ea9fd553.css">
+<link rel="modulepreload" href="./_observablehq/client.98368ff7.js">
+<link rel="modulepreload" href="./_observablehq/runtime.e080113b.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.73a8ec5a.js">
+<link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.17/d761ef9b.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/inputs.4ef1d259.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/9cffc2bd.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/72f4716c.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/18cbf477.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/e780feca.js">
+<link rel="modulepreload" href="./_npm/interval-tree-1d@1.0.4/53fe8176.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.4/e93ca09f.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.0/0f2de24d.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.0/65eb105b.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.1/7ef8fb2e.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.0/aeb57b94.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.2/1d2aed74.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/5ced1d52.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/9ba9c7f3.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.0/4202580c.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.1/cdd7e898.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/b4e2ad9a.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.0/5e804d15.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.0/86074ef6.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.1/40599fb3.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/e49e792c.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/8d1e5425.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.0/20d3f133.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/7553081f.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/0dfd751c.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.1/3c90ee06.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/843b6a76.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/ba24c2e7.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.0/4d94e5b7.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.0/6d3a6726.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.0/9f03c579.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.0/07c9626f.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.1/b58a267d.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.1/004da2ac.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/b5786b3f.js">
+<link rel="modulepreload" href="./_npm/binary-search-bounds@2.0.5/cbf6ba23.js">
+<link rel="modulepreload" href="./_npm/internmap@2.0.3/e08981d9.js">
+<link rel="modulepreload" href="./_npm/delaunator@5.0.1/02d43215.js">
+<link rel="modulepreload" href="./_npm/robust-predicates@3.0.2/aa00730b.js">
+<link rel="icon" href="./_file/observable.1af93621.png" type="image/png" sizes="32x32">
+<script type="module">
+
+import {define} from "./_observablehq/client.98368ff7.js";
+import {registerFile} from "./_observablehq/stdlib.73a8ec5a.js";
+
+registerFile("./data/biomass-mammals-display.csv", {"name":"./data/biomass-mammals-display.csv","mimeType":"text/csv","path":"./_file/data/biomass-mammals-display.90c7c07a.csv","lastModified":1762073080139,"size":70});
+registerFile("./data/biomass-mammals.csv", {"name":"./data/biomass-mammals.csv","mimeType":"text/csv","path":"./_file/data/biomass-mammals.551e8424.csv","lastModified":1762248737451,"size":211});
+registerFile("./data/global-forest-area-display.csv", {"name":"./data/global-forest-area-display.csv","mimeType":"text/csv","path":"./_file/data/global-forest-area-display.1b619cbc.csv","lastModified":1762497128113,"size":107});
+registerFile("./data/whales-display.csv", {"name":"./data/whales-display.csv","mimeType":"text/csv","path":"./_file/data/whales-display.e3a4d0c7.csv","lastModified":1762121732249,"size":366});
+
+define({id: "1b16e8f5", inputs: ["FileAttachment"], outputs: ["biomass","biomass_data","trees","whales"], body: (FileAttachment) => {
+const biomass = FileAttachment("./data/biomass-mammals-display.csv").csv({typed: true});
+const biomass_data = FileAttachment("./data/biomass-mammals.csv").csv({typed: true});
+// const trees = FileAttachment("data/deforestation-display.csv").csv({typed: true});
+const trees = FileAttachment("./data/global-forest-area-display.csv").csv({typed: true});
+const whales = FileAttachment("./data/whales-display.csv").csv({typed: true});
+return {biomass,biomass_data,trees,whales};
+}});
+
+define({id: "55e017fd", inputs: ["trees"], outputs: ["treesDisplay"], body: (trees) => {
+const treesDisplay = trees.map(d => ({
+  Year: String(d.Year ?? d.year ?? d["Year"]), // handles commas
+  "Forest Area (K ha)": d["Forest Area (K ha)"],
+  // "Wooded Land (K ha)": d["Wooded Land (K ha)"]
+}));
+return {treesDisplay};
+}});
+
+define({id: "09061baa", inputs: ["biomass_data"], outputs: ["Plot","biomass_chart"], body: async (biomass_data) => {
+const Plot = await import("./_npm/@observablehq/plot@0.6.17/d761ef9b.js");
+
+const biomass_chart = Plot.plot({
+  title: "The long-run decline of the world's wild mammals",
+  caption: "Chart is modeled after published version from Our World in Data.",
+  width: 700, // smaller overall size
+  height: 250,
+  marginTop: 40, // ↑ space above chart
+  marginLeft: 50,
+  marginBottom: 40,
+  x: {
+    label: "Year",    // categorical x-axis
+    tickRotate: 0,
+    tickFormat: String,
+    labelOffset: 30
+  },
+  y: {
+    label: "Biomass (million tons of carbon)",
+    grid: true
+  },
+  style: {
+    fontSize: "14px",      // ← global font size
+    fontFamily: "sans-serif",
+    background: "transparent" // optional: blend better in cards
+  },
+  color: {
+    legend: false
+  },
+  marks: [
+    Plot.barY(biomass_data, {
+      x: "Year",
+      y: "Biomass_mil_carbon",
+      fill: "orange",
+      tip: true, // built-in tooltip
+      sort: {x: "-y"} // sort chronologically
+    }),
+    Plot.ruleY([0])
+  ]
+});
+return {Plot,biomass_chart};
+}});
+
+define({id: "7d954662", inputs: ["trees"], outputs: ["Plot","deforestation_chart"], body: async (trees) => {
+const Plot = await import("./_npm/@observablehq/plot@0.6.17/d761ef9b.js");
+
+const deforestation_chart = Plot.plot({
+  width: 700,
+  height: 300,
+  marginLeft: 90, 
+  x: {label: "Year", tickFormat: String},
+  y: {
+    label: "Forest Area (K ha)",
+    // Fit y-axis to the min/max of data
+    domain: [
+      Math.min(...trees.map(d => d["Forest Area (K ha)"])) * 0.995, 
+      Math.max(...trees.map(d => d["Forest Area (K ha)"])) * 1.005
+    ],
+    grid: true
+  },
+  style: {fontFamily: "sans-serif", fontSize: "14px"},
+  marks: [
+    Plot.lineY(trees, {x: "Year", y: "Forest Area (K ha)", stroke: "forestgreen", strokeWidth: 3, curve: "catmull-rom", tip: true}),
+    Plot.dot(trees, {x: "Year", y: "Forest Area (K ha)", fill: "forestgreen"})
+  ]
+});
+return {Plot,deforestation_chart};
+}});
+
+define({id: "5a274905", mode: "inline", inputs: ["Inputs","biomass","display"], body: async (Inputs,biomass,display) => {
+display(await(
+Inputs.table(biomass)
+))
+}});
+
+define({id: "f73e9e61", mode: "inline", inputs: ["biomass_chart","display"], body: async (biomass_chart,display) => {
+display(await(
+biomass_chart
+))
+}});
+
+define({id: "392860a4", mode: "inline", inputs: ["Inputs","treesDisplay","display"], body: async (Inputs,treesDisplay,display) => {
+display(await(
+Inputs.table(treesDisplay)
+))
+}});
+
+define({id: "b226a52a", mode: "inline", inputs: ["deforestation_chart","display"], body: async (deforestation_chart,display) => {
+display(await(
+deforestation_chart
+))
+}});
+
+define({id: "efbc9fa0", mode: "inline", inputs: ["Inputs","whales","display"], body: async (Inputs,whales,display) => {
+display(await(
+Inputs.table(whales)
+))
+}});
+
+</script>
+</head>
+<body>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="./">Living Data</a></li>
+  </ol>
+  <section class="observablehq-section-active">
+    <summary class="observablehq-link"><a href="./prelude">Prelude</a></summary>
+    <ol>
+    <li class="observablehq-link observablehq-link-active"><a href="./data">Data</a></li>
+    <li class="observablehq-link"><a href="./theory">Theory</a></li>
+    </ol>
+  </section>
+  <section>
+    <summary class="observablehq-link"><a href="./biodiv">Part I: Biodiversity</a></summary>
+    <ol>
+    <li class="observablehq-link"><a href="./biomass">Biomass</a></li>
+    <li class="observablehq-link"><a href="./deforestation">Deforestation</a></li>
+    <li class="observablehq-link"><a href="./whales">Whales</a></li>
+    </ol>
+  </section>
+  <section>
+    <summary class="observablehq-link"><a href="./poetry">Part II: Poetry</a></summary>
+    <ol>
+    <li class="observablehq-link"><a href="./spoken">Spoken</a></li>
+    <li class="observablehq-link"><a href="./sonified">Sonified</a></li>
+    </ol>
+  </section>
+  <section>
+    <summary class="observablehq-link"><a href="./coda">Coda</a></summary>
+    <ol>
+    </ol>
+  </section>
+</nav>
+<script>{const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<div id="observablehq-center">
+<header id="observablehq-header">
+Prelude &gt;&gt; Data
+</header>
+<aside id="observablehq-toc" data-selector="h1:not(:first-of-type)[id], h2:first-child[id], :not(h1) + h2[id]">
+<nav>
+</nav>
+</aside>
+<main id="observablehq-main" class="observablehq">
+<div class="observablehq observablehq--block"><!--:1b16e8f5:--></div>
+<div class="observablehq observablehq--block"><!--:55e017fd:--></div>
+<div class="observablehq observablehq--block"><!--:09061baa:--></div>
+<div class="observablehq observablehq--block"><!--:7d954662:--></div>
+<h2>Biodiversity — <em>Decline of Wild Mammals</em></h2>
+<p><a href="https://ourworldindata.org/biodiversity?insight=wild-mammals-have-declined-by-85-since-the-rise-of-humans#key-insights" target="_blank" rel="noopener noreferrer">Our World in Data</a></p>
+<div class="grid grid-cols-2">
+    <div>
+        <p>Wild mammals have declined by 85% since the rise of humans, based on estimates of the total biomass of the world's wild land mammals. Biomass provides a proxy for the richness of the mammal kingdom.</p>
+    </div>
+    <div class="card card-fit-content" style="padding: 6px;">
+        <observablehq-loading></observablehq-loading><!--:5a274905:-->
+    </div>
+</div>
+<div class="card card-fit-content" style="padding: 20px;">
+    <observablehq-loading></observablehq-loading><!--:f73e9e61:--> 
+</div>
+<br>
+<br>
+<h2>Biodiversity — <em>Deforestation</em></h2>
+<p><a href="https://openknowledge.fao.org/server/api/core/bitstreams/2dee6e93-1988-4659-aa89-30dd20b43b15/content/cd6709en.html" target="_blank" rel="noopener noreferrer">Global Forest Resource Assessment (2025)</a></p>
+<div class="grid grid-cols-2">
+    <div>
+        <p>Key Findings:
+            </p><ul>
+                <li>The world is losing more forest than it gains every year.</li>
+                <li>However! Rates of deforestation are declining around the world since 1990. 👏 </li>
+                <li>Driving Factors: "Agriculture has historically been the leading cause of forest loss, but wildfire is increasingly posing a threat. Wildfires were the leading driver of tropical forest loss in 2024 for the first time on record." (UN report)</li>
+            </ul>
+        <p></p>
+    </div>
+    <div class="card card-fit-content">
+        <observablehq-loading></observablehq-loading><!--:392860a4:-->
+    </div>
+</div>
+<div class="card card-fit-content" style="padding: 20px;">
+    <observablehq-loading></observablehq-loading><!--:b226a52a:-->
+</div>
+<br>
+<h2>Biodiversity — <em>Whale Population Devastation</em></h2>
+<p><a href="https://ourworldindata.org/biodiversity?insight=wild-mammals-have-declined-by-85-since-the-rise-of-humans#key-insights" target="_blank" rel="noopener noreferrer">Our World in Data</a></p>
+<div class="grid grid-cols-2">
+    <div>
+        <p>Et malesuada fames ac turpis. Integer vitae justo eget magna fermentum iaculis eu non diam. Aliquet risus feugiat in ante metus dictum at. Consectetur purus ut faucibus pulvinar.</p>
+    </div>
+    <div class="card card-fit-content">
+        <observablehq-loading></observablehq-loading><!--:efbc9fa0:-->
+    </div>
+</div>
+<div class="card">
+    <iframe src="https://ourworldindata.org/grapher/whale-populations?tab=chart" loading="lazy" style="width: 100%; height: 500px; border: 0px none;" allow="web-share; clipboard-write"></iframe>
+</div>
+<br>
+<hr> <!-- horizontal line break -->
+<h2>Poetry — <em>"Invitation"</em> by Mary Oliver</h2>
+<p>
+<br>
+Oh do you have time<br>
+to linger<br>
+for just a little while<br>
+out of your busy<br>
+</p><p>and very important day<br>
+for the goldfinches<br>
+that have gathered<br>
+in a field of thistles<br></p>
+<p>for a musical battle,<br>
+to see who can sing<br>
+the highest note,<br>
+or the lowest,<br></p>
+<p>or the most expressive of mirth,<br>
+or the most tender?<br>
+Their strong, blunt beaks<br>
+drink the air<br></p>
+<p>as they strive<br>
+melodiously<br>
+not for your sake<br>
+and not for mine<br></p>
+<p>and not for the sake of winning<br>
+but for sheer delight and gratitude — <br>
+believe us, they say,<br>
+it is a serious thing<br></p>
+<p>just to be alive<br>
+on this fresh morning<br>
+in the broken world.<br>
+I beg of you,<br></p>
+<p>do not walk by<br>
+without pausing<br>
+to attend to this<br>
+rather ridiculous performance.<br></p>
+<p>It could mean something.<br>
+It could mean everything.<br>
+It could be what Rilke meant, when he wrote:<br>
+You must change your life.</p>
+<p></p>
+<style>
+  /* Target the Inputs.table inside this card */
+  .card table {
+    width: auto !important;           /* Don’t stretch to container */
+    table-layout: auto !important;    /* Let columns size naturally */
+  }
+  .card th, .card td {
+    white-space: nowrap;              /* Prevent line breaks */
+    padding-right: 12px;              /* Add a bit of spacing */
+    font-size: 120%;
+  }
+  .card-fit-content {
+    padding: 6px;
+    display: inline-block;
+    width: fit-content;
+  }
+  
+  /* FIX FOR TABLE BEING TALLER THAN NEEDED: */
+    .grid {
+    align-items: start; /* Prevents equal-height stretching */
+    }
+
+    /* Full width option ~ 85% */
+    main, main article, .content {
+        max-width: 100%;
+        min-width: 70%;
+        padding: 0 1rem; /* optional */
+        margin: 0 auto;
+    }
+</style></main>
+<footer id="observablehq-footer">
+<nav><a rel="prev" href="./prelude"><span>Prelude</span></a><a rel="next" href="./theory"><span>Theory</span></a></nav>
+<div>Aura Walmer | <a href="https://aurawalmer.com/data" target="_blank" rel="noopener noreferrer">www.aurawalmer.com</a> | 2025</div>
+</footer>
+</div>
+</body>
+</html>
