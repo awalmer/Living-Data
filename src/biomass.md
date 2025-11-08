@@ -23,6 +23,8 @@ const biomass6 = FileAttachment("photos/biomass-randomize-3.jpg").image({alt: "B
             <li>...the number of notes decreases.</li>
             <li>...the range of musical notes decreases.</li>
         </ul>
+      <br>
+    <li>Constrain to D Dorian scale.</li>
 </ol>
 
 <h2>Mapping</h2>
